@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профессиональное резюме | Алексей Иванов</title>
+    <link rel="stylesheet" href="system/css/style.css">
+</head>
+
+<style>
+    /* Глобальные стили и сброс */
+:root {
+    --primary-color: #1a1a2e;
+    --secondary-color: #4ecca3;
+    --accent-color: #f05454;
+    --light-color: #eeeeee;
+    --dark-color: #16213e;
+    --success-color: #16c79a;
+    --warning-color: #ffd369;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-heading: 'Arial Rounded MT Bold', 'Arial', sans-serif;
+    --transition: all 0.3s ease;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.2);
+    --card-bg: rgba(30, 30, 60, 0.7);
+    --text-primary: #e6f7ff;
+    --text-secondary: #b8b8b8;
+}
+
+/* Базовый сброс */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: linear-gradient(
+        135deg,
+        #050414 0%,
+        #0a0830 25%,
+        #1c1a40 50%,
+        #191935 75%,
+        #141428 100%
+    );
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    font-size: 16px;
+}
+
+/* Расплывчатый слой поверх фона */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+/* Типография */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    margin-top: 0;
+    line-height: 1.2;
+    color: var(--light-color);
+}
+
+h1 { font-size: 3.6rem; }
+h2 { font-size: 2.8rem; }
+h3 { font-size: 20px; }
+h4 { font-size: 1.8rem; }
+
+p {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-secondary);
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Основные компоненты */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    font-size: 16px;
+}
+
+.section {
+    padding: 8rem 0;
+    position: relative;
+}
+
+.section-title {
+    position: relative;
+    margin-bottom: 4rem;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    width: 60%;
+    height: 0.4rem;
+    background: var(--secondary-color);
+    border-radius: 0.2rem;
+    font-size: 20px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 2.4rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 5rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    gap: 0.8rem;
+}
+
+.btn:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: var(--shadow-hover);
+    background-color: #3dbd99;
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.btn-accent:hover {
+    background-color: #e04a4a;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 0.2rem solid var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Шапка */
+.header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
+    padding: 8rem 0 12rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+    opacity: 0.1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.header-title {
+    font-size: 4.8rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.header-subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+/* Визитная карточка */
+.business-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(1rem);
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-hover);
+    padding: 8rem;
+    max-width: 90rem;
+    margin: 8rem auto;
+    position: relative;
+    top: 5rem;
+    z-index: 10;
+    border: 0.1rem solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.8s ease-out 0.4s both;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    gap: 3rem;
+}
+
+.card-avatar {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 0.5rem solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow);
+    flex-shrink: 0;
+}
+
+.card-info {
+    flex: 1;
+}
+
+.card-name {
+    font-size: 3.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.card-title {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.card-description {
+    font-size: 1.6rem;
+    line-height: 1.7;
+}
+
+.card-buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+/* Профиль */
+.profile-grid, .profile-card {
+    font-size: 14px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.profile-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: #fff;
+  transition: background-color 0.3s ease; 
+}
+
+.profile-card:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.profile-card h3 {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  margin-bottom: 1rem;
+  color: var(--accent, #4CAF50);
+}
+
+.profile-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-card ul li {
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+}
+
+.skill-tag {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  margin: 0.3rem;
+  border-radius: 1rem;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background-color 0.3s;
+}
+
+.skill-tag:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+/* Опыт работы */
+.experience-section {
+    background: linear-gradient(135deg, rgba(22, 33, 62, 0.8) 0%, rgba(15, 52, 96, 0.8) 100%);
+    backdrop-filter: blur(0.5rem);
+}
+
+.experience-timeline {
+    position: relative;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding-left: 5rem;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 2rem;
+    top: 0;
+    bottom: 0;
+    width: 0.4rem;
+    background: var(--secondary-color);
+    border-radius: 0.2rem;
+}
+
+.experience-item {
+    position: relative;
+    margin-bottom: 3rem;
+    background: var(--card-bg);
+    backdrop-filter: blur(0.5rem);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 0.1rem solid rgba(255, 255, 255, 0.05);
+}
+
+.experience-item:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: var(--shadow-hover);
+}
+
+.experience-item::before {
+    content: '';
+    position: absolute;
+    left: -4rem;
+    top: 3rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--accent-color);
+    border: 0.4rem solid var(--secondary-color);
+    z-index: 1;
+}
+
+.experience-period {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.experience-company {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--light-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.experience-position {
+    font-size: 1.6rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.experience-description {
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    line-height: 1.7;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding-top 0.3s ease;
+}
+
+.experience-description.active {
+    max-height: 50rem;
+    padding-top: 1.5rem;
+}
+
+/* Контакты */
+.contacts-section {
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(15, 52, 96, 0.9) 100%);
+}
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.contact-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(0.5rem);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+    border: 0.1rem solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: var(--shadow-hover);
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+    color: var(--secondary-color);
+    flex-shrink: 0;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-type {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.contact-value {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* Модальные окна */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(0.5rem);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: linear-gradient(145deg, var(--primary-color), var(--dark-color));
+    border-radius: 1rem;
+    box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 80rem;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: translateY(-5rem);
+    transition: all 0.3s ease;
+    padding: 4rem;
+    border: 0.1rem solid rgba(255, 255, 255, 0.1);
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: var(--transition);
+    background: none;
+    border: none;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.modal-close:hover {
+    color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.modal-title {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    color: var(--light-color);
+}
+
+/* Формы */
+.contact-form .form-group {
+    margin-bottom: 2rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    color: var(--light-color);
+    font-size: 1.4rem;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.1rem solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.8rem;
+    font-family: var(--font-main);
+    font-size: 1.6rem;
+    color: var(--light-color);
+    transition: var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 0 0.3rem rgba(78, 204, 163, 0.3);
+}
+
+.contact-form textarea {
+    min-height: 15rem;
+    resize: vertical;
+}
+
+.form-submit {
+    margin-top: 3rem;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
+    color: var(--text-secondary, #ddd);
+    padding: 3rem 1rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.4rem;
+}
+
+.footer-content {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.footer-text {
+    margin-bottom: 2rem;
+}
+
+.developer {
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.tech {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #f0f0f0;
+}
+
+.tech .logo {
+    width: 24px;
+    height: auto;
+    vertical-align: middle;
+    margin: 0 4px;
+}
+
+.tech a {
+    color: #00bfff;
+    text-decoration: none;
+}
+
+.tech a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    color: #bbb;
+}
+
+@media (min-width: 600px) {
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(2rem); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-2rem); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    html { font-size: 58%; }
+    
+    .header-title { font-size: 3.6rem; }
+    .header-subtitle { font-size: 1.6rem; }
+    
+    .business-card {
+        padding: 3rem;
+        margin-top: -6rem;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .card-buttons {
+        justify-content: center;
+    }
+    
+    .section {
+        padding: 6rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    html { font-size: 55%; }
+    
+    .header-title { font-size: 3rem; }
+    .header-subtitle { font-size: 1.4rem; }
+    
+    .business-card {
+        padding: 2rem;
+        margin-top: -4rem;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .experience-timeline {
+        padding-left: 3rem;
+    }
+    
+    .experience-item::before {
+        left: -3rem;
+    }
+}
+
+/* Специальные элементы */
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: rgba(78, 204, 163, 0.2);
+    color: var(--secondary-color);
+    border-radius: 5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.tag:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    transform: translateY(-0.3rem);
+}
+
+/* Терминал */
+.terminal {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 3rem auto;
+    color: var(--secondary-color);
+    font-family: 'Courier New', monospace;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    text-align: left;
+    max-width: 80rem;
+    border: 0.1rem solid rgba(78, 204, 163, 0.2);
+    box-shadow: 0 0 2rem rgba(78, 204, 163, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.terminal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(78, 204, 163, 0.05) 0%,
+        transparent 20%,
+        transparent 80%,
+        rgba(78, 204, 163, 0.05) 100%
+    );
+    pointer-events: none;
+}
+
+#typed-line {
+    display: inline;
+}
+
+#typed-line::after {
+    content: '█';
+    animation: blink 1s infinite;
+    color: var(--secondary-color);
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Индикатор загрузки */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.3rem;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 9999;
+}
+
+.loader::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    animation: loading 2s ease-in-out infinite;
+}
+
+@keyframes loading {
+    0% { width: 0; left: 0; }
+    50% { width: 100%; left: 0; }
+    100% { width: 0; left: 100%; }
+}
+</style>
+
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="header-bg"></div>
+        
+        <div class="container header-content">
+            <div class="terminal">
+                 <span class="typed-line" id="typed-line"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Визитная карточка -->
+    <section class="container">
+        <div class="business-card">
+            <div class="card-header">
+                <img src="system/images/profil/MZn0hkyt4SpDqE-J4NjZ4ntAopzqD9Sx8OEZ54FMrpt4Cyx5Ehas5AUz6U82-5V4tvWGJvzyclKNCiDkhbyrxb7O.jpg" alt="Фото профиля" class="card-avatar">
+                <div class="card-info">
+                    <h2 class="card-name">Анискин Максим Геннадьевич</h2>
+                    <p class="card-title">Универсальный специалист</p>
+                    <p>Опытный профессионал с разносторонними навыками и быстрой обучаемостью</p>
+                </div>
+            </div>
+
+            <div class="card-buttons">
+                <button id="showResumeBtn" class="btn btn-accent">Посмотреть резюме</button>
+                <button id="showContactForm" class="btn btn-outline">Предложить работу</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="container">
+        <div class="business-card">
+            <h2 class="section-title">Контакты</h2>
+            
+            <div class="contacts-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-info">
+                        <div class="contact-type">Телефон</div>
+                        <div class="contact-value">+7 (908) 457 15-79</div>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-info">
+                        <div class="contact-type">Email</div>
+                        <div class="contact-value">newg6734@gmail.com</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container">
+        <div class="business-card">
+            <div class="universal-profile">
+                <h2 class="section-title">Профессиональный профиль</h2>
+
+                <div class="profile-grid">
+                    <div class="profile-card basic-info">
+                        <h3>
+                            <svg class="profile-image" width="20" height="20" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 0px;">
+                                <path fill="#4CAF50" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                            </svg>
+                            Основная информация
+                        </h3>
+
+                        <ul>
+                            <li><strong>Возраст:</strong> <span id="age"></span></li>
+                            <li><strong>Город проживания:</strong> <span>Владивосток</span></li>
+                            <li><strong>Ключевые направления:</strong> 
+                                <span>Веб-разработка</span>, 
+                                <span>тестирование</span>, 
+                                <span>работа с техникой</span>
+                            </li>
+                            <li><strong>Готовность:</strong> 
+                                <span>Полная занятость</span>, 
+                                <span>проектная работа</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Технические навыки -->
+            <div class="universal-profile">
+                <div class="profile-card tech-skills">
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 8px;">
+                            <path fill="#2196F3" d="M18 2h-8L4 8v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 4h2v5l-1-.75L9 9V4zm9 16H6V8.83L10.83 4H16v5h5v11z"/>
+                        </svg>   
+                        Технические навыки
+                    </h3>
+            
+                    <div class="skills-tags">
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Тестирование ПО</span>
+                        <span class="skill-tag">Автоматизация тестов</span>
+                        <span class="skill-tag">Техническая документация</span>
+                        <span class="skill-tag">Экскаваторы-погрузчики</span>
+                        <span class="skill-tag">Демонтаж сооружений</span>
+                        <span class="skill-tag">Работа с техникой</span>
+                        <span class="skill-tag">Ремонт техники</span>
+                        <span class="skill-tag">Сортировка и упаковка</span>
+                        <span class="skill-tag">Производство</span>
+                        <span class="skill-tag">Охрана объектов</span>
+                        <span class="skill-tag">Контроль безопасности</span>
+                        <span class="skill-tag">Физическая работа</span>
+                        <span class="skill-tag">Сборка изделий</span>
+                        <span class="skill-tag">Работа разнорабочим</span>
+                        <span class="skill-tag">Обслуживание оборудования</span>
+                        <span class="skill-tag">Приготовление пищи</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Дополнительно -->
+            <div class="universal-profile">
+                <div class="profile-card additional">
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 8px;">
+                            <path fill="#9C27B0" d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zm1-11h-2v3H8v2h3v3h2v-3h3v-2h-3V8z"/>
+                        </svg>
+                        Дополнительные навыки
+                    </h3>
+            
+                    <ul>
+                        <li>Английский язык: Intermediate (B1)</li>
+                        <li>Навыки проектного управления</li>
+                        <li>Работа в команде и самостоятельно</li>
+                        <li>Клиентоориентированность</li>
+                        <li>Стрессоустойчивость</li>
+                        <li>Адаптивность к различным условиям труда</li>
+                        <li>Умение работать по инструкциям и ТЗ</li>
+                        <li>Ответственный подход к работе</li>
+                        <li>Внимание к деталям</li>
+                        <li>Базовые навыки работы с ПК и офисными программами</li>
+                        <li>Навыки самообучения</li>
+                    </ul>
+                </div>
+            </div>    
+        </div>
+    </section>
+
+    <!-- Опыт работы -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Опыт работы</h2>
+            
+            <div class="experience-timeline">
+                <!-- Место работы 1 -->
+                <div class="experience-item">
+                    <div class="experience-period">14.04.2025 - настоящее время</div>
+                    <h3 class="experience-company">
+                        МБУ "СГТ"
+                        <svg class="official-badge" width="18" height="18" viewBox="0 0 20 20" fill="#4CAF50" xmlns="http://www.w3.org/2000/svg" aria-label="Официальная работа">
+                            <circle cx="10" cy="10" r="9" fill="#4CAF50" stroke="#2E7D32" stroke-width="1"/>
+                            <path d="M6 10L9 13L14 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </h3>
+                    
+                    <h4 class="experience-position">Машинист экскаватора</h4>
+                    
+                    <div class="experience-description">
+                        <p>
+                            Управлял экскаватором-погрузчиком (Амкодор 732), выполнял демонтаж незаконных объектов и сооружений, подлежащих сносу. Обеспечивал безопасное и эффективное выполнение работ, проводил обслуживание и текущий ремонт техники, строго соблюдал нормы безопасности.
+                        </p>
+                        
+                        <div class="tag-cloud">
+                            <span class="tag">Экскаватор погрузчик</span>
+                            <span class="tag">Демонтаж</span>
+                            <span class="tag">Незаконные сооружения</span>
+                            <span class="tag">Снос</span>
+                            <span class="tag">Строительство</span>
+                            <span class="tag">Техника</span>
+                            <span class="tag">Безопасность</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Место работы 2 -->
+                <div class="experience-item">
+                    <div class="experience-period">21.11.2024 - 14.03.2025 (3 месяца)</div>
+                    <h3 class="experience-company">
+                        АО "ВладХлеб"
+                        <svg class="official-badge" width="18" height="18" viewBox="0 0 20 20" fill="#4CAF50" xmlns="http://www.w3.org/2000/svg" aria-label="Официальная работа">
+                            <circle cx="10" cy="10" r="9" fill="#4CAF50" stroke="#2E7D32" stroke-width="1"/>
+                            <path d="M6 10L9 13L14 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </h3>
+                   
+                    <h4 class="experience-position">Упаковщик готовой продукции</h4>
+                    
+                    <div class="experience-description">
+                        <p>
+                            Занимался упаковкой хлебобулочных изделий: сортировал, фасовал и упаковывал готовую продукцию. Контролировал качество изделий и правильность маркировки. Соблюдал санитарные нормы и правила работы с упаковочным оборудованием.
+                        </p>
+                        
+                        <div class="tag-cloud">
+                            <span class="tag">Техника</span>
+                            <span class="tag">Упаковка</span>
+                            <span class="tag">Маркировка</span>
+                            <span class="tag">Контроль качества</span>
+                            <span class="tag">Санитария</span>
+                            <span class="tag">Фасовка</span>
+                            <span class="tag">Пищевое производство</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Место работы 3 -->
+                <div class="experience-item">
+                    <div class="experience-period">25.05.2024 - 25.07.2024 (2 месяца)</div>
+                    <h3 class="experience-company">АО "Владхлеб"</h3>
+                    <h4 class="experience-position">Упаковщик</h4>
+                    
+                    <div class="experience-description">
+                        <p>
+                            Работа на линии упаковки кондитерской продукции: тортов, пирожных, кексов, рулетов и другой выпечки. Сортировка изделий по видам и видам упаковки, контроль целостности и внешнего вида продукции, аккуратная укладка в коробки, работа в быстром темпе. Поддержание чистоты рабочего места, соблюдение санитарных норм.
+                        </p>
+    
+                        <div class="tag-cloud">
+                            <span class="tag">Упаковка</span>
+                            <span class="tag">Кондитерские изделия</span>
+                            <span class="tag">Контроль качества</span>
+                            <span class="tag">Скорость и аккуратность</span>
+                            <span class="tag">Соблюдение санитарных норм</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Место работы 4 -->
+                <div class="experience-item">
+                    <div class="experience-period">05.02.2024 - 01.05.2024 (3 месяца)</div>
+                    <h3 class="experience-company">ЧОП "Арт"</h3>
+                    <h4 class="experience-position">Охранник казино Tigre De Cristal</h4>
+    
+                    <div class="experience-description">
+                        <p>
+                            Охрана внешней территории казино Tigre De Cristal: парковка, лесной участок, побережье, а также общежитие для персонала. Контроль прохода и поведения посетителей и сотрудников вне основного здания казино. Наблюдение за безопасностью и предотвращение нарушений на подступах к объекту. Работа на свежем воздухе, в одиночном посту, в тесном взаимодействии со службой безопасности.
+                        </p>
+                        
+                        <div class="tag-cloud">
+                            <span class="tag">Охрана</span>
+                            <span class="tag">Казино</span>
+                            <span class="tag">Контроль территории</span>
+                            <span class="tag">Безопасность</span>
+                            <span class="tag">Персонал</span>
+                            <span class="tag">Парковка</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Место работы 5 -->
+                <div class="experience-item">
+                    <div class="experience-period">01.09.2023 - 01.11.2023 (2 месяца)</div>
+                    <h3 class="experience-company">ООО "ВСК 1"</h3>
+                    <h4 class="experience-position">Дорожный рабочий</h4>
+                    
+                    <div class="experience-description">
+                        <p>
+                            Выполнение различных видов дорожных работ: покос травы, укладка габионов, монтаж водоотводных труб, благоустройство обочин и подготовка дорожного полотна. Работа в составе бригады, соблюдение техники безопасности и выполнение задач в сжатые сроки.
+                        </p>
+                
+                        <div class="tag-cloud">
+                            <span class="tag">Дорожные работы</span>
+                            <span class="tag">Габионы</span>
+                            <span class="tag">Покос травы</span>
+                            <span class="tag">Монтаж труб</span>
+                            <span class="tag">Благоустройство</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Место работы 6 -->
+                <div class="experience-item">
+                    <div class="experience-period">**.**.**** - **.**.**** (1 месяц)</div>
+                    <h3 class="experience-company">ООО "Восток Форс"</h3>
+                    <h4 class="experience-position">Разнорабочий</h4>
+                   
+                    <div class="experience-description">
+                        <p>
+                            Выполнение вспомогательных задач на объекте: перенос и сортировка материалов, уборка территории, помощь основным специалистам, выполнение поручений бригадира. Работа требовала внимательности, физической выносливости и оперативности.
+                        </p>
+                        
+                        <div class="tag-cloud">
+                            <span class="tag">Разнорабочий</span>
+                            <span class="tag">Физический труд</span>
+                            <span class="tag">Помощь бригаде</span>
+                            <span class="tag">Уборка</span>
+                            <span class="tag">Материалы</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Место работы 7 -->
+                <div class="experience-item">
+                    <div class="experience-period">**.**.**** - **.**.**** (1 месяц)</div>
+                    <h3 class="experience-company">ООО "ZazaCafe"</h3>
+                    <h4 class="experience-position">Повар</h4>
+                   
+                    <div class="experience-description">
+                        <p>
+                            Приготовление блюд итальянской кухни по технологическим картам: пицца, паста, салаты и закуски. Контроль качества и вкуса готовых блюд, соблюдение санитарных норм и чистоты на рабочем месте. Работа в команде, обеспечение своевременной подачи заказов, поддержание порядка на кухне.
+                        </p>
+                        
+                         <div class="tag-cloud">
+                            <span class="tag">Повар</span>
+                            <span class="tag">Итальянская кухня</span>
+                            <span class="tag">Пицца</span>
+                            <span class="tag">Санитарные нормы</span>
+                            <span class="tag">Работа в команде</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Место работы 8 -->
+                <div class="experience-item">
+                    <div class="experience-period">**.**.**** - **.**.**** (1 месяц)</div>
+                    <h3 class="experience-company">ЧОА "Спрут"</h3>
+                    <h4 class="experience-position">Охрана гипермаркета Самбери</h4>
+                       
+                    <div class="experience-description">
+                        <p>Обеспечение безопасности на территории гипермаркета: контроль входа и выхода посетителей, предотвращение хищений, проверка чеков, видеонаблюдение, взаимодействие с персоналом и охранной системой магазина.</p>
+                            
+                        <div class="tag-cloud">
+                            <span class="tag">Охрана</span>
+                            <span class="tag">Безопасность</span>
+                            <span class="tag">Торговый зал</span>
+                            <span class="tag">Контроль</span>
+                            <span class="tag">Видеонаблюдение</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Место работы 9 -->
+                <div class="experience-item">
+                    <div class="experience-period">**.**.**** - **.**.**** (1 месяц)</div>
+                    <h3 class="experience-company">ИП *****</h3>
+                    <h4 class="experience-position">Разнорабочий</h4>
+                  
+                    <div class="experience-description">
+                        <p>Выполнение различных поручений: помощь при погрузке и разгрузке, уборка территорий, доставка материалов, выезды на заявки в пределах города. Работа требовала быстрой реакции, физической выносливости и способности к самостоятельному решению задач.</p>
+                        
+                        <div class="tag-cloud">
+                            <span class="tag">Разнорабочий</span>
+                            <span class="tag">Физическая работа</span>
+                            <span class="tag">Выезд на заявки</span>
+                            <span class="tag">Погрузка</span>
+                            <span class="tag">Уборка</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Место работы 10 -->
+                <div class="experience-item">
+                    <div class="experience-period">**.**.**** – **.**.**** (5 месяцев)</div>
+                    <h3 class="experience-company">ООО Декстер</h3>
+                    <h4 class="experience-position">Сборка крабовых ловушек</h4>
+                     
+                    <div class="experience-description">
+                        <p>Сборка и разборка крабовых ловушек, участие в подготовке материалов, помощь в хозяйственных и производственных работах. Работа требовала аккуратности, выносливости и умения работать в команде.</p>
+                        
+                        <div class="tag-cloud">
+                            <span class="tag">Сборка</span>
+                            <span class="tag">Разборка</span>
+                            <span class="tag">Крабовые ловушки</span>
+                            <span class="tag">Производство</span>
+                            <span class="tag">Физическая работа</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно выбора резюме -->
+    <div id="resumeModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2 class="modal-title">Выберите вариант резюме</h2>
+            
+            <div class="resume-options">
+                <div class="resume-option" data-resume="web">
+                    <div class="resume-icon">💻</div>
+                    <h3 class="resume-name">Веб-разработчик</h3>
+                    <p class="resume-desc">HTML, CSS, JavaScript, React, Vue.js</p>
+                </div>
+                
+                <div class="resume-option" data-resume="excavator">
+                    <div class="resume-icon">🚜</div>
+                    <h3 class="resume-name">Машинист экскаватора</h3>
+                    <p class="resume-desc">JCB, CAT, Hitachi, Volvo</p>
+                </div>
+                
+                <div class="resume-option" data-resume="qa">
+                    <div class="resume-icon">🔍</div>
+                    <h3 class="resume-name">QA Тестировщик</h3>
+                    <p class="resume-desc">Ручное тестирование, автотесты, Jira</p>
+                </div>
+                
+                <div class="resume-option" data-resume="junior">
+                    <div class="resume-icon">👶</div>
+                    <h3 class="resume-name">Начинающий специалист</h3>
+                    <p class="resume-desc">Быстрая обучаемость, готовность к работе</p>
+                </div>
+            </div>
+            
+            <div id="resumeContent" style="display: none;">
+                <!-- Контент будет загружен динамически -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно контактов -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2 class="modal-title">Предложить работу</h2>
+            
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="contactName">Ваше имя</label>
+                    <input type="text" id="contactName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactEmail">Email</label>
+                    <input type="email" id="contactEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactPhone">Телефон</label>
+                    <input type="tel" id="contactPhone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactCompany">Компания</label>
+                    <input type="text" id="contactCompany">
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactPosition">Предлагаемая должность</label>
+                    <input type="text" id="contactPosition" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactSalary">Предполагаемый уровень оплаты</label>
+                    <select id="contactSalary">
+                        <option value="hourly">Почасовая оплата /==\</option>
+                        <option value="project">Сдельная оплата /==\</option>
+                        <option value="monthly">Фиксированная ставка</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactMessage">Дополнительная информация</label>
+                    <textarea id="contactMessage" rows="5"></textarea>
+                </div>
+                
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-accent">Отправить предложение</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-text">
+            <div class="developer">
+                Проект разработан разработчиком <strong>T_Pixels_S</strong>.
+            </div>
+            <div class="tech">
+                При создании использованы технологии: <br>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" class="logo"> 
+                <strong><a href="https://openai.com/chatgpt" target="_blank" rel="noopener noreferrer">ChatGPT</a></strong> от компании OpenAI
+                <br> и <br>
+                <img src="https://brandlogos.net/wp-content/uploads/2025/02/deepseek_logo_icon-logo_brandlogos.net_s5bgc.png" alt="DeepSeek" class="logo"> 
+                <strong><a href="https://www.deepseek.com/" target="_blank" rel="noopener noreferrer">DeepSeek</a></strong> от компании DeepSeek AI.
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copywriter">© Все права защищены, 2025</div>
+            <div class="version">v 0.2</div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // Данные для резюме
+        const resumes = {
+            web: {
+                title: "Веб-разработчик",
+                content: `
+                    <div class="content-item">
+                        <h3>Основные навыки</h3>
+                        <ul>
+                            <li>HTML5, CSS3 (Sass, Less)</li>
+                            <li>JavaScript (ES6+), jQuery</li>
+                            <li>Базовые знания React, Vue.js</li>
+                            <li>Адаптивная и кроссбраузерная верстка</li>
+                            <li>Работа с Git, Webpack</li>
+                            <li>Базовые знания PHP, MySQL</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-item">
+                        <h3>Опыт работы</h3>
+                        <p><strong>Фриланс проекты</strong> (2020-настоящее время)</p>
+                        <ul>
+                            <li>Разработка лендингов и корпоративных сайтов</li>
+                            <li>Интеграция CMS (WordPress, OpenCart)</li>
+                            <li>Оптимизация скорости загрузки сайтов</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-item">
+                        <h3>Образование</h3>
+                        <p><strong>Онлайн курсы</strong> (HTML Academy, Stepik, Udemy)</p>
+                        <ul>
+                            <li>Веб-разработка для начинающих</li>
+                            <li>JavaScript: полный курс</li>
+                            <li>React: современный фронтенд</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-item">
+                        <h3>Примеры работ</h3>
+                        <ul>
+                            <li><a href="#" target="_blank">Корпоративный сайт для строительной компании</a></li>
+                            <li><a href="#" target="_blank">Интернет-магазин строительных материалов</a></li>
+                            <li><a href="#" target="_blank">Лендинг для сервиса аренды техники</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-item">
+                        <h3>Тип оплаты</h3>
+                        <p>
+                            <span class="payment-badge"><span class="payment-icon">⏱️</span> Почасовая /==\ 500-800 ₽/час</span>
+                            <span class="payment-badge"><span class="payment-icon">💰</span> Сдельная /==\ от 50 000 ₽/проект</span>
+                        </p>
+                    </div>
+                `
+            },
+            excavator: {
+                title: "Машинист экскаватора",
+                content: `
+                    <div class="content-item">
+                        <h3>Квалификация</h3>
+                        <ul>
+                            <li>Удостоверение машиниста экскаватора (категории B, C, D)</li>
+                            <li>Опыт работы на экскаваторах JCB, CAT, Hitachi, Volvo</li>
+                            <li>Навыки выполнения земляных работ любой сложности</li>
+                            <li>Техническое обслуживание и мелкий ремонт техники</li>
+                            <li>Знание техники безопасности при работе на строительных площадках</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-item">
+                        <h3>Опыт работы</h3>
+                        <p><strong>СГТ (Строительная Группа Технологий)</strong> (2021-настоящее время)</p>
+                        <ul>
+                            <li>Выполнение земляных работ на объектах жилищного и промышленного строительства</li>
+                            <li>Работа с различными видами навесного оборудования</li>
+                            <li>Участие в сложных проектах с жесткими сроками</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-item">
+                        <h3>Достижения</h3>
+                        <ul>
+                            <li>Участие в строительстве 5 жилых комплексов в Москве и области</li>
+                            <li>Благодарности за качественное и своевременное выполнение работ</li>
+                            <li>Отсутствие аварий и несчастных случаев за весь период работы</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-item">
+                        <h3>Тип оплаты</h3>
+                        <p>
+                            <span class="payment-badge"><span class="payment-icon">⏱️</span> Почасовая /==\ 300-500 ₽/час</span>
+                            <span class="payment-badge"><span class="payment-icon">💰</span> Сдельная /==\ от 5000 ₽/куб.м</span>
+                        </p>
+                    </div>
+                `
+            },
+            qa: {
+                title: "QA Тестировщик",
+                content: `
+                    <div class="content-item">
+                        <h3>Навыки тестирования</h3>
+                        <ul>
+                            <li>Ручное функциональное тестирование веб-приложений</li>
+                            <li>Составление тест-кейсов, чек-листов</li>
+                            <li>Базовые знания SQL для проверки данных</li>
+                            <li>Работа с баг-трекинговыми системами (Jira, Redmine)</li>
+                            <li>Основы автоматизированного тестирования (Selenium WebDriver)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-item">
+                        <h3>Опыт работы</h3>
+                        <p><strong>Фриланс проекты</strong> (2021-настоящее время)</p>
+                        <ul>
+                            <li>Тестирование интернет-магазинов и корпоративных сайтов</li>
+                            <li>Поиск и документирование багов</li>
+                            <li>Проверка кроссбраузерной и кроссплатформенной совместимости</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-item">
+                        <h3>Технические навыки</h3>
+                        <ul>
+                            <li>Базовые знания HTML, CSS, JavaScript</li>
+                            <li>Работа с DevTools, Postman</li>
+                            <li>Основы работы с Git</li>
+                            <li>Английский язык - Intermediate (чтение технической документации)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-item">
+                        <h3>Тип оплаты</h3>
+                        <p>
+                            <span class="payment-badge"><span class="payment-icon">⏱️</span> Почасовая /==\ 400-600 ₽/час</span>
+                            <span class="payment-badge"><span class="payment-icon">💰</span> Сдельная /==\ от 30 000 ₽/проект</span>
+                        </p>
+                    </div>
+                `
+            },
+            junior: {
+                title: "Начинающий специалист",
+                content: `
+                    <div class="content-item">
+                        <h3>Ключевые качества</h3>
+                        <ul>
+                            <li>Быстрая обучаемость и желание развиваться</li>
+                            <li>Ответственность и исполнительность</li>
+                            <li>Готовность к рутинной работе на начальном этапе</li>
+                            <li>Умение работать в команде</li>
+                            <li>Техническая грамотность</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-item">
+                        <h3>Опыт работы</h3>
+                        <p><strong>СГТ (Строительная Группа Технологий)</strong> (2021-настоящее время)</p>
+                        <ul>
+                            <li>Работа машинистом экскаватора</li>
+                            <li>Навыки работы со сложной техникой</li>
+                            <li>Соблюдение строгих сроков выполнения работ</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-item">
+                        <h3>Навыки</h3>
+                        <ul>
+                            <li>Базовые знания ПК (Office, интернет)</li>
+                            <li>Водительское удостоверение категории B, C</li>
+                            <li>Физическая выносливость</li>
+                            <li>Готовность к обучению и освоению новых профессий</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-item">
+                        <h3>Тип оплаты</h3>
+                        <p>
+                            <span class="payment-badge"><span class="payment-icon">⏱️</span> Почасовая /==\ 200-300 ₽/час</span>
+                            <span class="payment-badge"><span class="payment-icon">💰</span> Сдельная /==\ договорная</span>
+                        </p>
+                    </div>
+                `
+            }
+        };
+
+        // Инициализация модальных окон
+        document.addEventListener('DOMContentLoaded', function() {
+            // Кнопка "Посмотреть резюме"
+            const showResumeBtn = document.getElementById('showResumeBtn');
+            const showContactForm = document.getElementById('showContactForm');
+            const modal = document.getElementById('resumeModal');
+            const contactModal = document.getElementById('contactModal');
+            const modalClose = document.querySelectorAll('.modal-close');
+            const resumeOptions = document.querySelectorAll('.resume-option');
+            const resumeContent = document.getElementById('resumeContent');
+            const optionsContainer = document.querySelector('.resume-options');
+            
+            
+            
+            // Показать модальное окно с выбором резюме
+            showResumeBtn.addEventListener('click', function() {
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+                resumeContent.style.display = 'none';
+                optionsContainer.style.display = 'grid';
+            });
+            
+            // Показать модальное окно контактов
+            showContactForm.addEventListener('click', function() {
+                contactModal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // Закрыть модальные окна
+            modalClose.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    modal.classList.remove('show');
+                    contactModal.classList.remove('show');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+            
+            // Закрыть при клике вне модального окна
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('show');
+                    document.body.style.overflow = 'auto';
+                }
+                if (e.target === contactModal) {
+                    contactModal.classList.remove('show');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Показать выбранное резюме
+            resumeOptions.forEach(function(option) {
+                option.addEventListener('click', function() {
+                    const resumeType = this.getAttribute('data-resume');
+                    const modalTitle = document.querySelector('#resumeModal .modal-title');
+                    
+                    modalTitle.textContent = `Резюме ${resumes[resumeType].title.toLowerCase()}`;
+                    resumeContent.innerHTML = resumes[resumeType].content;
+                    
+                    optionsContainer.style.display = 'none';
+                    resumeContent.style.display = 'block';
+                });
+            });
+            
+            // Кнопка "Назад" в просмотре резюме
+            const backButton = document.createElement('button');
+            backButton.className = 'btn btn-outline';
+            backButton.textContent = 'Назад к выбору';
+            backButton.style.marginTop = '20px';
+            backButton.addEventListener('click', function() {
+                resumeContent.style.display = 'none';
+                optionsContainer.style.display = 'grid';
+            });
+            
+            resumeContent.appendChild(backButton);
+            
+            // Обработка формы
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Спасибо! Ваше предложение отправлено. Я свяжусь с вами в ближайшее время.');
+                contactModal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+                contactForm.reset();
+            });
+            
+            // Обработка кликов по компаниям в опыте работы
+            document.querySelectorAll('.experience-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const description = this.querySelector('.experience-description');
+                   
+                    if (description) {
+                        description.classList.toggle('active');
+
+                        // Плавная прокрутка к раскрытому элементу
+                        if (description.classList.contains('active')) {
+                            setTimeout(() => {
+                                this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                            }, 50);
+                        }
+                    }
+                });
+            });
+            
+            // Дата рождения: 7 июля 2003 года
+            const birthDate = new Date(2003, 6, 7); // Месяцы в JS начинаются с 0 (6 = июль)
+  const today = new Date();
+  
+  // Рассчитываем разницу в годах
+  let age = today.getFullYear() - birthDate.getFullYear();
+  
+  // Проверяем, был ли уже день рождения в этом году
+  const monthDiff = today.getMonth() - birthDate.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  
+  // Находим элемент и вставляем возраст
+  const ageElement = document.getElementById('age');
+  if (ageElement) {
+    ageElement.textContent = age;
+    
+    // Добавляем правильное окончание для русского языка
+    const lastDigit = age % 10;
+    const lastTwoDigits = age % 100;
+    
+    let yearWord = 'лет';
+    if (lastTwoDigits < 10 || lastTwoDigits > 20) {
+      if (lastDigit === 1) yearWord = 'год';
+      else if (lastDigit >= 2 && lastDigit <= 4) yearWord = 'года';
+    }
+    
+    ageElement.textContent += ' ' + yearWord;
+  }
+  
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const lines = ["Профессиональное резюме с интерактивными элементами"];
+    const output = document.getElementById("typed-line");
+
+    let lineIndex = 0;
+    let charIndex = 0;
+
+    function typeLine() {
+        if (lineIndex >= lines.length) return;
+
+        const currentLine = lines[lineIndex];
+        output.textContent += currentLine.charAt(charIndex);
+        charIndex++;
+
+        if (charIndex < currentLine.length) {
+            setTimeout(typeLine, 100);
+        } else {
+            output.textContent += '\n';
+            charIndex = 0;
+            lineIndex++;
+            setTimeout(typeLine, 500);
+        }
+    }
+
+    typeLine();
+});
+
+
+    </script>
+</body>
+</html>
